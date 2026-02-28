@@ -375,7 +375,8 @@ footer { background: var(--navy-deep); color: var(--gray-400); padding: 56px 0 3
     <!-- Inner decorative ring -->
     <circle cx="150" cy="150" r="110" fill="none" stroke="#c4a265" stroke-width="0.25" stroke-dasharray="18 8 2 8" opacity="0.14"/>
 
-    <!-- === SHIELD === wide, balanced, Apple-precision geometry -->
+    <!-- === SHIELD + GROUP centered ensemble (shifted +8px to center in circle) === -->
+    <g transform="translate(0, 8)">
     <!-- Shield ambient glow -->
     <path d="M150 56 L220 82 L220 140 C220 180 188 210 150 222 C112 210 80 180 80 140 L80 82 Z" fill="#c4a265" opacity="0.018"/>
     <!-- Shield main outline -->
@@ -385,21 +386,20 @@ footer { background: var(--navy-deep); color: var(--gray-400); padding: 56px 0 3
     <!-- Shield fill -->
     <path d="M150 72 L208 93 L208 135 C208 168 181 198 150 210 C119 198 92 168 92 135 L92 93 Z" fill="#c4a265" opacity="0.03"/>
 
-    <!-- === CENTER — "GROUP" typography === Apple-level refinement -->
-
-    <!-- Thin rule above — optically centered in shield -->
+    <!-- Thin rule above -->
     <line x1="118" y1="120" x2="182" y2="120" stroke="#c4a265" stroke-width="0.35" opacity="0.22"/>
     <!-- Micro diamond accents -->
     <rect x="113.5" y="118.5" width="2.5" height="2.5" rx="0.4" fill="#c4a265" opacity="0.3" transform="rotate(45 114.75 119.75)"/>
     <rect x="184" y="118.5" width="2.5" height="2.5" rx="0.4" fill="#c4a265" opacity="0.3" transform="rotate(45 185.25 119.75)"/>
 
-    <!-- "GROUP" — elegant, wide-tracked, optically centered -->
+    <!-- "GROUP" -->
     <text x="150" y="144" font-family="'Cormorant Garamond', Georgia, serif" font-size="21" font-weight="600" fill="#c4a265" text-anchor="middle" letter-spacing="5" opacity="0.88">GROUP</text>
 
     <!-- Thin rule below -->
     <line x1="120" y1="153" x2="180" y2="153" stroke="#c4a265" stroke-width="0.3" opacity="0.18"/>
     <!-- Centered dot -->
     <circle cx="150" cy="160" r="1" fill="#c4a265" opacity="0.28"/>
+    </g>
 
     <!-- === TEXT ARCS === -->
     <path id="topArc" d="M50 150 A100 100 0 0 1 250 150" fill="none"/>
