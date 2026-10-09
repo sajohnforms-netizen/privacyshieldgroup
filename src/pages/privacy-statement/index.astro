@@ -1,0 +1,87 @@
+---
+import LegalLayout from '../../layouts/LegalLayout.astro';
+import { company } from '../../data/company';
+---
+<LegalLayout
+  title="Privacy statement — Privacy Shield Group"
+  description="How Privacy Shield Group B.V. handles the personal data of visitors to privacyshieldgroup.com."
+  path="/privacy-statement/"
+>
+  <span class="eyebrow">Legal</span>
+  <h1>Privacy statement</h1>
+  <div class="rule"></div>
+
+  <p>
+    {company.legalName} certifies hotels on how they handle the privacy of their guests.
+    It would be odd to ask that of others and be vague about it ourselves, so this page
+    states plainly what this website does and does not do with your data.
+  </p>
+
+  <h2>What this website collects</h2>
+  <p>
+    Nothing. privacyshieldgroup.com is an information site. It carries no contact form,
+    no accounts and no login. We set no tracking cookies and run no analytics or
+    advertising scripts.
+  </p>
+  <p>
+    Fonts and images are served from our own server. No request from this page goes to
+    Google, to a font service or to any other third party, so no third party learns that
+    you visited us.
+  </p>
+
+  <h2>If you contact us</h2>
+  <p>
+    Write to <a href={`mailto:${company.email}`}>{company.email}</a> or call
+    <a href={`tel:${company.phoneHref}`}>{company.phoneDisplay}</a> and we process the
+    details you supply, for one purpose: answering you. We keep that correspondence for
+    as long as handling your question requires and for as long as statutory retention
+    obligations demand, and no longer.
+  </p>
+  <p>
+    Mail sent to our address is routed through Cloudflare Email Routing, which forwards
+    it to the mailbox we actually read. Your message passes through Cloudflare's
+    infrastructure on the way.
+  </p>
+
+  <h2>Hosting and logs</h2>
+  <p>
+    This site is hosted on Cloudflare Pages. Cloudflare processes technical request data
+    such as your IP address to deliver the page and to defend against attacks. That is a
+    normal part of serving a website and is covered by Cloudflare's own data processing
+    terms.
+  </p>
+
+  <h2>Certification work</h2>
+  <p>
+    This statement covers the website only. Personal data processed during an audit,
+    inspection or training assignment is governed by the agreement with the client
+    concerned, including the processing agreement that forms part of it.
+  </p>
+
+  <h2>Your rights</h2>
+  <p>
+    You may ask to see the data we hold about you, to have it corrected or to have it
+    erased. Write to <a href={`mailto:${company.email}`}>{company.email}</a>. You may also
+    lodge a complaint with the Dutch Data Protection Authority, the Autoriteit
+    Persoonsgegevens.
+  </p>
+
+  <h2>Who is responsible</h2>
+  <p>
+    {company.legalName}<br />
+    {company.street}<br />
+    {company.postalCode} {company.city}<br />
+    {company.country}<br />
+    <a href={`mailto:${company.email}`}>{company.email}</a><br />
+    <a href={`tel:${company.phoneHref}`}>{company.phoneDisplay}</a>
+    {company.kvk && <Fragment><br />Chamber of Commerce {company.kvk}</Fragment>}
+    {company.vat && <Fragment><br />VAT {company.vat}</Fragment>}
+  </p>
+  <p>
+    {company.legalName} is a wholly owned subsidiary of
+    <a href={company.parent.url} rel="noopener">{company.parent.name}</a>, registered in
+    the Dutch business register under number {company.parent.kvk}.
+  </p>
+
+  <p class="meta">Last updated: 9 October 2026.</p>
+</LegalLayout>

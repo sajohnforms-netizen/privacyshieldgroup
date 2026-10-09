@@ -1,5 +1,7 @@
 ---
 // Privacy Shield Group — Landing Page
+import { company } from '../data/company';
+const year = new Date().getFullYear();
 ---
 
 <!DOCTYPE html>
@@ -14,25 +16,78 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://privacyshieldgroup.com">
 <link rel="canonical" href="https://privacyshieldgroup.com">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
+/* ── Self-hosted fonts ────────────────────────────────────────────────────── */
+
+/* Inter - variable font (400-700) */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('/fonts/inter-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('/fonts/inter-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* Cormorant Garamond - normal (400-700) */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('/fonts/cormorant-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('/fonts/cormorant-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* Cormorant Garamond - italic (400) */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/cormorant-italic-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/cormorant-italic-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
 :root {
-  --navy-deep: #050c18;
-  --navy: #0b1a30;
-  --navy-mid: #122240;
-  --navy-soft: #1a2d4e;
-  --gold: #c4a265;
-  --gold-light: #d6bb88;
+  --navy-deep: #0E1630;
+  --navy: #0a1628;
+  --navy-mid: #18254F;
+  --navy-soft: #243566;
+  --gold: #C8A96E;
+  --gold-light: #D9C08C;
   --gold-pale: #e8dbc0;
-  --gold-dark: #a68740;
+  --gold-dark: #A68B52;
   --gold-glow: rgba(196,162,101,0.10);
   --gold-glow-strong: rgba(196,162,101,0.18);
   --white: #ffffff;
-  --off-white: #fbfaf8;
-  --cream: #f6f3ee;
-  --warm-gray: #f0ede7;
+  --off-white: #f4f5f7;
+  --cream: #F5F3EF;
+  --warm-gray: #EAE7E1;
   --gray-100: #e8e4dd;
   --gray-200: #d1ccc3;
   --gray-300: #b5afa5;
@@ -48,8 +103,8 @@
   --shadow-soft: 0 4px 24px rgba(6,13,26,0.06);
   --shadow-lift: 0 12px 40px rgba(6,13,26,0.08);
   --shadow-gold: 0 8px 36px rgba(196,162,101,0.14);
-  --radius: 12px;
-  --radius-lg: 20px;
+  --radius: 2px;
+  --radius-lg: 2px;
 }
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -298,6 +353,10 @@ footer { background: var(--navy-deep); color: var(--gray-400); padding: 56px 0 3
   .hero-deco { display: none; }
   .btn-primary { padding: 11px 24px; font-size: 11px; }
 }
+
+/* Zakelijke voettekst: regels zonder link, zelfde ritme als de links ernaast */
+.footer-plain { display:block; color: var(--gray-300); font-size: .875rem; line-height: 1.7; margin-bottom: .35rem; }
+.footer-col h5 { letter-spacing: .14em; }
 </style>
 </head>
 <body>
@@ -778,14 +837,25 @@ footer { background: var(--navy-deep); color: var(--gray-400); padding: 56px 0 3
       </div>
       <div class="footer-col">
         <h5>Contact</h5>
-        <a href="mailto:info@privacyshieldgroup.com">info@privacyshieldgroup.com</a>
-        <a href="tel:+31207823222">+31 20 782 3222</a>
-        <a href="#">Amsterdam, The Netherlands</a>
+        <a href={`mailto:${company.email}`}>{company.email}</a>
+        <a href={`tel:${company.phoneHref}`}>{company.phoneDisplay}</a>
+        <span class="footer-plain">{company.street}<br />{company.postalCode} {company.city}<br />{company.country}</span>
+      </div>
+      <div class="footer-col">
+        <h5>Company details</h5>
+        <span class="footer-plain">{company.legalName}</span>
+        {company.kvk && <span class="footer-plain">Chamber of Commerce {company.kvk}</span>}
+        {company.vat && <span class="footer-plain">VAT {company.vat}</span>}
+        <span class="footer-plain">Registered seat {company.city}</span>
+        <a href="/privacy-statement/">Privacy statement</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>&copy; 2026 Privacy Shield Group. All rights reserved.</span>
-      <span>An initiative supported by <a href="https://sajrecherche.com/" target="_blank" rel="noopener">SAJ Recherche B.V.</a> (POB 8779)</span>
+      <span>&copy; {year} {company.legalName} &middot; all rights reserved</span>
+      <span>
+        A wholly owned subsidiary of <a href={company.parent.url} rel="noopener">{company.parent.name}</a>,
+        alongside <a href={company.sister.url} rel="noopener">{company.sister.name}</a> ({company.sister.licence}).
+      </span>
     </div>
   </div>
 </footer>

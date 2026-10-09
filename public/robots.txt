@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# AI-zoekmachines expliciet toegelaten, zelfde beleid als de andere SAJ-sites
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://privacyshieldgroup.com/sitemap.xml

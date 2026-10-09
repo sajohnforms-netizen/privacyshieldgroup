@@ -22,3 +22,6 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# dev-config hoort in de root van de werkruimte, niet in deze repo
+.claude/
