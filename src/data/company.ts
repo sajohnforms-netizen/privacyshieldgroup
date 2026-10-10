@@ -24,13 +24,13 @@ export const company = {
   email: 'info@privacyshieldgroup.com',
 
   /**
-   * Inschrijving bij de KvK was op 9 oktober 2026 nog niet zichtbaar in het
-   * handelsregister. John verwacht het nummer in het weekend van 11-12 oktober
-   * 2026. Zodra KvK en btw bekend zijn hier invullen: ze verschijnen dan
-   * automatisch in de voettekst en in de juridische gegevens. Leeg laten
+   * KvK geverifieerd uit het digitaal gewaarmerkte uittreksel (KvK-mail
+   * 10 oktober 2026). Btw-nummer is nog niet bekend (volgt van de
+   * Belastingdienst); zodra bekend hier invullen, dan verschijnt het
+   * automatisch in de voettekst en de juridische gegevens. Leeg laten
    * betekent: regel wordt niet getoond.
    */
-  kvk: '',
+  kvk: '42189369',
   vat: '',
 
   /** Moedermaatschappij, geverifieerd in het handelsregister. */
