@@ -2,6 +2,38 @@
 // Privacy Shield Group — Landing Page
 import { company } from '../data/company';
 const year = new Date().getFullYear();
+
+// Organization structured data — koppelt PSG als werkmaatschappij aan de holding
+// SAJ Group B.V. De @id sluit aan op subOrganization in sajgroup.nl's schema,
+// zodat Google/AI holding en dochters als één entiteitsgraaf zien.
+const siteUrl = 'https://privacyshieldgroup.com';
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': `${siteUrl}/#organization`,
+  name: company.legalName,
+  alternateName: company.shortName,
+  legalName: company.legalName,
+  url: siteUrl,
+  foundingDate: company.foundedISO,
+  email: company.email,
+  telephone: company.phoneHref,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: company.street,
+    postalCode: company.postalCode,
+    addressLocality: company.city,
+    addressCountry: company.countryCode,
+  },
+  ...(company.kvk ? { identifier: { '@type': 'PropertyValue', name: 'KvK', value: company.kvk } } : {}),
+  parentOrganization: {
+    '@type': 'Organization',
+    '@id': `${company.parent.url}/#organization`,
+    name: company.parent.name,
+    url: company.parent.url,
+    identifier: { '@type': 'PropertyValue', name: 'KvK', value: company.parent.kvk },
+  },
+};
 ---
 
 <!DOCTYPE html>
@@ -16,6 +48,7 @@ const year = new Date().getFullYear();
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://privacyshieldgroup.com">
 <link rel="canonical" href="https://privacyshieldgroup.com">
+<script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
 <style>
 /* ── Self-hosted fonts ────────────────────────────────────────────────────── */
 
