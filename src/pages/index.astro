@@ -156,7 +156,8 @@ body {
 /* ===== NAVIGATION ===== */
 /* Same header as sajrecherche.com: fixed solid navy bar, 80px, shadow */
 .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--navy); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1); }
-.nav .container { display: flex; justify-content: space-between; align-items: center; gap: 16px; height: 80px; }
+.nav .container { display: flex; justify-content: space-between; align-items: center; gap: 16px; height: 80px; max-width: 1280px; }
+.nav-phone, .nav-cta, .logo-text strong { white-space: nowrap; }
 .nav-spacer { height: 80px; }
 .logo-mark { display: flex; align-items: center; gap: 12px; text-decoration: none; flex-shrink: 0; }
 .logo-shield { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; }
@@ -347,8 +348,10 @@ footer { background: var(--navy-deep); color: var(--gray-400); padding: 56px 0 3
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 960px) {
+  .hero { display: block; min-height: 0; padding-bottom: 0; }
   .hero-content { grid-template-columns: 1fr; gap: 0; padding-top: 64px; padding-bottom: 48px; }
   .hero-right { display: none; }
+  .hero-stats { position: relative; }
   .hero-sub { font-size: 16px; }
   .nav-links, .nav-right { display: none; }
   .nav-toggle { display: flex; }
@@ -365,8 +368,7 @@ footer { background: var(--navy-deep); color: var(--gray-400); padding: 56px 0 3
 
 @media (max-width: 768px) {
   .section { padding: 80px 0; }
-  .hero { min-height: 0; padding-bottom: 120px; }
-  .hero-content { padding-top: 56px; padding-bottom: 24px; }
+  .hero-content { padding-top: 56px; padding-bottom: 36px; }
   .hero h1 { font-size: 30px; }
   .hero-sub { font-size: 15px; line-height: 1.65; }
   .hero-usps { flex-direction: column; gap: 8px; }
@@ -506,10 +508,10 @@ footer { background: var(--navy-deep); color: var(--gray-400); padding: 56px 0 3
   </div>
   <div class="hero-stats" aria-label="Key facts">
     <div class="container">
-      <div class="hero-stat"><strong>1st</strong><span>Independent hotel privacy certificate</span></div>
+      <div class="hero-stat"><strong>1st</strong><span>Hotel privacy certificate</span></div>
       <div class="hero-stat"><strong>4</strong><span>Certification pillars</span></div>
       <div class="hero-stat"><strong>GDPR</strong><span>Legal framework</span></div>
-      <div class="hero-stat"><strong>Amsterdam</strong><span>Based in the Netherlands</span></div>
+      <div class="hero-stat"><strong>Amsterdam</strong><span>Based in</span></div>
     </div>
   </div>
 </section>
