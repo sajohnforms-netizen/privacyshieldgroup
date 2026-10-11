@@ -21,7 +21,14 @@ export const company = {
   phoneHref: '+31207823222',
   phoneDisplay: '+31 20 782 3222',
 
-  email: 'info@privacyshieldgroup.com',
+  /**
+   * 11 okt 2026: post naar info@privacyshieldgroup.com kwam niet goed aan
+   * (Cloudflare Email Routing nog niet ingericht). Tot de doorstuurregel
+   * info@privacyshieldgroup.com -> info@sajrecherche.com in het Cloudflare-
+   * dashboard staat, mailt de site rechtstreeks naar info@sajrecherche.com.
+   * Daarna hier weer 'info@privacyshieldgroup.com' invullen.
+   */
+  email: 'info@sajrecherche.com',
 
   /**
    * KvK geverifieerd uit het digitaal gewaarmerkte uittreksel (KvK-mail
