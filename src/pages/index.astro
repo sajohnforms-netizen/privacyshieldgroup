@@ -186,7 +186,7 @@ body {
 
 /* ===== HERO ===== */
 /* Same hero as sajrecherche.com: full image, navy gradient, badge pill, gold divider, usps, 2 buttons, stats bar */
-.hero { background: var(--navy-deep); color: var(--white); position: relative; overflow: hidden; display: flex; align-items: center; min-height: 85vh; padding-bottom: 96px; }
+.hero { background: var(--navy-deep); color: var(--white); position: relative; overflow: hidden; display: flex; align-items: center; min-height: 80vh; }
 .hero-bg { position: absolute; inset: 0; background: url('/img/hospitality.webp') center / cover no-repeat; filter: brightness(0.6) saturate(0.75); }
 .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(14,22,48,0.85) 0%, rgba(14,22,48,0.65) 50%, rgba(14,22,48,0.4) 100%); }
 .hero-content { position: relative; z-index: 2; padding-top: 80px; padding-bottom: 80px; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 56px; align-items: center; }
@@ -206,12 +206,6 @@ body {
 .btn-white { border: 1px solid rgba(255,255,255,0.6); color: var(--white); }
 .btn-white:hover { background: rgba(255,255,255,0.1); }
 .btn-white svg { width: 16px; height: 16px; }
-/* Stats bar (bottom of hero) */
-.hero-stats { position: absolute; bottom: 0; left: 0; right: 0; z-index: 2; border-top: 1px solid rgba(255,255,255,0.1); background: rgba(14,22,48,0.6); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
-.hero-stats .container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; padding-top: 20px; padding-bottom: 20px; }
-.hero-stat { text-align: center; }
-.hero-stat strong { display: block; font-family: var(--font-display); font-size: 30px; font-weight: 700; color: var(--gold); line-height: 1.2; }
-.hero-stat span { font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: rgba(255,255,255,0.6); }
 
 /* Hero badge: static, no animation */
 .hero-right { display: flex; justify-content: center; align-items: center; }
@@ -349,10 +343,9 @@ footer { background: var(--navy-deep); color: var(--gray-400); padding: 56px 0 3
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 960px) {
-  .hero { display: block; min-height: 0; padding-bottom: 0; }
-  .hero-content { grid-template-columns: 1fr; gap: 0; padding-top: 64px; padding-bottom: 48px; }
+  .hero { display: block; min-height: 0; }
+  .hero-content { grid-template-columns: 1fr; gap: 0; padding-top: 64px; padding-bottom: 56px; }
   .hero-right { display: none; }
-  .hero-stats { position: relative; }
   .hero-sub { font-size: 16px; }
   .nav-links, .nav-right { display: none; }
   .nav-toggle { display: flex; }
@@ -375,9 +368,6 @@ footer { background: var(--navy-deep); color: var(--gray-400); padding: 56px 0 3
   .hero-usps { flex-direction: column; gap: 8px; }
   .hero-actions { flex-direction: column; align-items: stretch; gap: 12px; }
   .btn-primary, .btn-white { justify-content: center; padding: 12px 28px; font-size: 12px; }
-  .hero-stats .container { grid-template-columns: 1fr 1fr; gap: 12px; }
-  .hero-stat strong { font-size: 22px; }
-  .hero-stat span { font-size: 10px; }
   .process-steps { grid-template-columns: 1fr 1fr; gap: 32px; }
   .process-steps::before { display: none; }
   .pos-features { grid-template-columns: 1fr; gap: 16px; }
@@ -505,14 +495,6 @@ footer { background: var(--navy-deep); color: var(--gray-400); padding: 56px 0 3
       <div class="hero-badge-main">
         <svg aria-hidden="true"><use href="#psg-badge"/></svg>
       </div>
-    </div>
-  </div>
-  <div class="hero-stats" aria-label="Key facts">
-    <div class="container">
-      <div class="hero-stat"><strong>1st</strong><span>Hotel privacy certificate</span></div>
-      <div class="hero-stat"><strong>4</strong><span>Certification pillars</span></div>
-      <div class="hero-stat"><strong>GDPR</strong><span>Legal framework</span></div>
-      <div class="hero-stat"><strong>Amsterdam</strong><span>Head office</span></div>
     </div>
   </div>
 </section>
