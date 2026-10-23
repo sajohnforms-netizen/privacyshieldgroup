@@ -22,13 +22,11 @@ export const company = {
   phoneDisplay: '+31 20 782 3222',
 
   /**
-   * 11 okt 2026: post naar info@privacyshieldgroup.com kwam niet goed aan
-   * (Cloudflare Email Routing nog niet ingericht). Tot de doorstuurregel
-   * info@privacyshieldgroup.com -> info@sajrecherche.com in het Cloudflare-
-   * dashboard staat, mailt de site rechtstreeks naar info@sajrecherche.com.
-   * Daarna hier weer 'info@privacyshieldgroup.com' invullen.
+   * Cloudflare Email Routing stuurt info@privacyshieldgroup.com door naar
+   * info@sajrecherche.com (doorstuurregel + geverifieerde bestemming,
+   * werking bevestigd in het activiteitenlog op 22 oktober 2026).
    */
-  email: 'info@sajrecherche.com',
+  email: 'info@privacyshieldgroup.com',
 
   /**
    * KvK geverifieerd uit het digitaal gewaarmerkte uittreksel (KvK-mail
